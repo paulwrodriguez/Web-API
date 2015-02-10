@@ -1,0 +1,69 @@
+Paul Rodriguez
+Homework 1 Part 1
+
+Request:
+
+Accept-encoding: gzip,deflate
+	Accept-encoding tells the  server what media type(s) it would prefer. In this example, the client is telling the server that it can compress the data using gzip or deflate
+	
+Host: www.googleapis.com
+	The domain name of the request URL. 
+	
+Connection: Keep-Alive
+	The connection header specifies the requested action be taken after request has been made. Keep-alive means that they connection will remain even after request is fulfilled. 
+	
+User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
+	The User-Agent request-header field contains information about the user agent originating the request. 
+	Apache-HttpClient/4.1.1 (java 1.5) - is what was used by client
+
+Response:
+
+Expires: Mon, 09 Feb 2015 04:54:37 GMT
+	Tells the client, or proxy, that it may cache the HTTP response until specified time. This helps to avoid the overhead of a conditional HTTP GET. 
+	
+Date: Mon, 09 Feb 2015 04:54:37 GMT
+	This represents the time on the server that the request was fulfilled. 
+	
+Cache-Control: private, max-age=0, must-revalidate, no-transform
+	This header contain directives that must be obeyed by all caching mechanisms along the request/response chain. It spells out the rules for how the data should be cached and when it should be dumped from the cache.
+	Private - indicates that all or part of the response are intended for one user and must not be cached by a shared cache. Although, a private cache (non-shared) may cache the response. 
+	max-age=0 - defines when an assent expires in seconds. 
+	must-revalidate - When the must-revalidate directive is present in a response received by a cache, that cache MUST NOT use the entry after it becomes stale to respond to a subsequent request without first revalidating it with the origin server.
+	no-transform - This implies that the cache or proxy MUST NOT change any aspect of the entity-body that is specified by these headers, including the value of the entity-body itself.
+
+ETag: "_rmWcTkH-s1QFjg9mC3Xel0FZSQ/gJIX7X5fuhQunJhy7nw4svzBJks"
+	ETag specifies a specific version of a representation. It can be used to check if a representation has changed. 
+
+Vary: Origin
+	The Vary field value indicates the set of request-header fields that fully determines, while the response is fresh, whether a cache is permitted to use the response to reply to a subsequent request without revalidation. 
+	Origin indicates to clients that server responses will differ based on the value of the Origin request header.
+
+Vary: X-Origin
+	The Vary field value indicates the set of request-header fields that fully determines, while the response is fresh, whether a cache is permitted to use the response to reply to a subsequent request without revalidation. 
+	
+
+Content-Type: application/json; charset=UTF-8
+	This gives the media type of the entity-body. The type is a application/json and is stores in UTF-8. 
+	
+X-Content-Type-Options: nosniff
+	Sending the new X-Content-Type-Options response header with the value nosniff will prevent Internet Explorer from MIME-sniffing a response away from the declared content-type.
+
+X-Frame-Options: SAMEORIGIN
+	Can be used to indicate whether or not a browser should be allowed to render a page in a <frame>, <iframe> or <object> 
+	SameOrigin - means that the page can only be displayed in a frame on the same origin as the page itself.
+
+X-XSS-Protection: 1; mode=block
+	This header enables the Cross-site scripting (XSS) filter built into most recent web browsers.
+	1 - Force XSS protection
+	mode=block - will prevent browser (IE8+ and Webkit browsers) to render pages (instead of sanitizing) if a potential XSS reflection attack is detected.
+
+Content-Length: 26982
+	This gives the size of the entity-body in bytes. 
+
+Server: GSE
+	Server - informs the client about the software used on the remote machine
+	GSE - the server is using GSE to deliver the request. 
+	
+Alternate-Protocol: 443:quic,p=0.02
+	Specifies where future requests should be directed to. 
+	

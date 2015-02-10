@@ -1,0 +1,61 @@
+SOAP
+
+Request:
+
+Accept-Encoding: gzip,deflate
+	Accept-encoding tells the  server what media type(s) it would prefer. In this example, the client is telling the server that it can compress the data using gzip or deflate
+	
+Content-Type: text/xml;charset=UTF-8
+	 Content-Type - gives the media type of the entity-body. 
+	 
+SOAPAction: "http://www.webservicex.net/GetGeoIP"
+	 SOAPAction - Used to indicate the intent of the SOAP HTTP request. 
+	 "http://www.webservicex.net/GetGeoIP" - The value is a URI identifying the intent.
+	 
+Content-Length: 325
+	This gives the size of the entity-body in bytes. 
+	
+Host: www.webservicex.net
+	The domain name of the request URL. 
+	
+Connection: Keep-Alive
+	The connection header specifies the requested action be taken after request has been made. Keep-alive means that they connection will remain even after request is fulfilled. 
+	
+User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
+	The User-Agent request-header field contains information about the user agent originating the request. 
+	Apache-HttpClient/4.1.1 (java 1.5) - is what was used by client to send request
+
+Response:
+
+Cache-Control: private, max-age=0
+	This header contain directives that must be obeyed by all caching mechanisms along the request/response chain. It spells out the rules for how the data should be cached and when it should be dumped from the cache.
+	private - Private - indicates that all or part of the response are intended for one user and must not be cached by a shared cache. Although, a private cache (non-shared) may cache the response. 
+	max-age = 0 - max-age=0 - defines when an assent expires in seconds. 
+	
+Content-Type: text/xml; charset=utf-8
+	This gives the media type of the entity-body. The type is a application/json and is stores in UTF-8. 
+	
+Server: Microsoft-IIS/7.0
+	Server - informs the client about the software used on the remote machine
+	Microsoft-IIS/7.0 - the server is using Microsoft-IIS/7.0 to deliver the request.
+X-AspNet-Version: 4.0.30319
+	Which ASP.NET version was being run on response server
+	
+X-Powered-By: ASP.NET
+	The collection (there can be multiple) of application frameworks being run by the server. 
+	ASP.Net is the framework being used on the server
+	
+Date: Mon, 09 Feb 2015 20:04:49 GMT
+	Date - As a response header, it represents the time on the server at the time the request was fulfilled. The response-header version of Date is used by caches when calculating whether a cached document is still fresh
+	
+Content-Length: 517
+	This gives the size of the entity-body in bytes. 
+	
+Via: 1.1 wsa2-man.ucdenver.pvt:80 (Cisco-IronPort-WSA/7.7.0-760)
+	Via - the path that the HTTP took through the intermediaries
+	1.1 wsa2-man.ucdenver.pvt:80 (Cisco-IronPort-WSA/7.7.0-760) - where request passed through in order to make request to server
+	
+Connection: keep-alive
+	Connection header specifies the requested action be taken after request has been made.
+	Keep-alive - means that they connection will remain even after request is fulfilled. 
+	
