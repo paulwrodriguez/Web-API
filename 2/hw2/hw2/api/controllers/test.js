@@ -10,7 +10,6 @@ module.exports = {
   testPut: testPut, 
   testDelete: testDelete, 
   testPost: testPost, 
-  testDefault: testDefault,
   error: error
 };
 
